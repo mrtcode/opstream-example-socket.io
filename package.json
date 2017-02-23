@@ -1,0 +1,18 @@
+{
+  "name": "opstream-example-socket.io",
+  "description": "OpStream + Socket.io example",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Martynas Bagdonas",
+    "email": "git.martynas@gmail.com"
+  },
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*",
+    "opstream": "*"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

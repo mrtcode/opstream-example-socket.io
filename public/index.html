@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>opstream-example-socket.io</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/opstream.js"></script>
+</head>
+<body>
+
+<script>
+
+  var socket = io.connect('/');
+
+
+  var opStream = new OpStream();
+
+  socket.on('message', function (data) {
+    opStream.recv(data);
+  });
+
+  opStream.send = function (data) {
+    socket.emit('message', data);
+  };
+
+  opStream.onReadable = function () {
+    var op;
+    while (op = opStream.pop()) {
+      console.log('server sent', op);
+    }
+  };
+
+  var n = 1;
+
+  setInterval( function() {
+    opStream.push('packet'+n);
+    n++;
+  }, 1000);
+
+
+</script>
+
+
+</body>
+</html>
