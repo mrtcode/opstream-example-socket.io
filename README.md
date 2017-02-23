@@ -1,7 +1,7 @@
 
 # OpStream + Socket.io example
 
-OpStream wraps Socket.io and guarantees sequence for packets packets no matter which transport layer is used.
+OpStream wraps Socket.io and guarantees sequence for packets no matter which transport layer is used.
 
 
 ```
