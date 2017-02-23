@@ -6,7 +6,7 @@ var io = require('socket.io')(server);
 var port = 3000;
 
 server.listen(port, function () {
-  console.log('Server listening at port %d', port);
+  console.log('Server started. Open http://localhost:%d/', port);
 });
 
 app.use(express.static(__dirname + '/public'));
